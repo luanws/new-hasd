@@ -1,4 +1,15 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'e:\GitHub\new-hasd\src\ui\main\window.ui'
+#
+# Created by: PyQt5 UI code generator 5.14.1
+#
+# WARNING! All changes made in this file will be lost!
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -68,8 +79,10 @@ class Ui_MainWindow(object):
         self.action_projector_settings.setObjectName("action_projector_settings")
         self.action_theme_settings = QtWidgets.QAction(MainWindow)
         self.action_theme_settings.setObjectName("action_theme_settings")
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Projetor bíblico"))

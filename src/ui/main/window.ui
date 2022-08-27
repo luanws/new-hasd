@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>709</width>
-    <height>578</height>
+    <width>805</width>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,7 +26,14 @@ QPushButton:hover {
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #181818;
+padding: 24px;</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>8</number>
+    </property>
     <property name="leftMargin">
      <number>16</number>
     </property>
@@ -40,14 +47,60 @@ QPushButton:hover {
      <number>16</number>
     </property>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>40</height>
-       </size>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>Hinário adventista do sétimo dia</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>1024</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 5px;
+background-color: #212121;
+text-align: center;
+color: white;
+padding: 12px 16px;
+font-size: 20px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Pesquise aqui...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QListWidget" name="listWidget">
+        <property name="maximumSize">
+         <size>
+          <width>1024</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
