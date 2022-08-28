@@ -4,6 +4,7 @@ import unicodedata
 from typing import List
 
 number_of_hymns = 600
+path = os.path.join(os.getcwd(), 'HASD')
 
 
 def get_filenames_from_path(path: str) -> List[str]:
@@ -24,7 +25,6 @@ def check_missing(values: List[int], complete_values: List[int]) -> List[int]:
     return missing
 
 
-path = os.path.join(os.getcwd(), 'HASD', 'new')
 filenames = get_filenames_from_path(path)
 hymn_numbers_str = [(re.findall(r'^\d+', filename) + [0])[0] for filename in filenames]
 hymn_numbers = [int(n) for n in hymn_numbers_str]
