@@ -67,7 +67,7 @@ padding: 24px;</string>
     <item>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="searchVideoLineEdit">
         <property name="maximumSize">
          <size>
           <width>1024</width>
@@ -91,7 +91,7 @@ font-size: 20px;</string>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QListWidget" name="listWidget">
+       <widget class="QListWidget" name="videoListWidget">
         <property name="maximumSize">
          <size>
           <width>1024</width>

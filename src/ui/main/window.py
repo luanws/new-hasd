@@ -31,21 +31,21 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.label)
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setMaximumSize(QtCore.QSize(1024, 16777215))
-        self.lineEdit.setStyleSheet("border-radius: 5px;\n"
+        self.searchVideoLineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.searchVideoLineEdit.setMaximumSize(QtCore.QSize(1024, 16777215))
+        self.searchVideoLineEdit.setStyleSheet("border-radius: 5px;\n"
 "background-color: #212121;\n"
 "text-align: center;\n"
 "color: white;\n"
 "padding: 12px 16px;\n"
 "font-size: 20px;")
-        self.lineEdit.setText("")
-        self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
-        self.listWidget = QtWidgets.QListWidget(self.centralwidget)
-        self.listWidget.setMaximumSize(QtCore.QSize(1024, 16777215))
-        self.listWidget.setObjectName("listWidget")
-        self.gridLayout.addWidget(self.listWidget, 1, 0, 1, 1)
+        self.searchVideoLineEdit.setText("")
+        self.searchVideoLineEdit.setObjectName("searchVideoLineEdit")
+        self.gridLayout.addWidget(self.searchVideoLineEdit, 0, 0, 1, 1)
+        self.videoListWidget = QtWidgets.QListWidget(self.centralwidget)
+        self.videoListWidget.setMaximumSize(QtCore.QSize(1024, 16777215))
+        self.videoListWidget.setObjectName("videoListWidget")
+        self.gridLayout.addWidget(self.videoListWidget, 1, 0, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.actionSair = QtWidgets.QAction(MainWindow)
@@ -74,7 +74,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Projetor bíblico"))
         self.label.setText(_translate("MainWindow", "Hinário adventista do sétimo dia"))
-        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Pesquise aqui..."))
+        self.searchVideoLineEdit.setPlaceholderText(_translate("MainWindow", "Pesquise aqui..."))
         self.actionSair.setText(_translate("MainWindow", "Sair"))
         self.action_about.setText(_translate("MainWindow", "Sobre"))
         self.actionVerificar_se_h_atualiza_es.setText(_translate("MainWindow", "Verificar se há atualizações"))
