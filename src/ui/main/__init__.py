@@ -20,7 +20,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.video_service = VideoService('data')
 
         self.searchVideoLineEdit.textChanged.connect(self.search_video)
-        self.videoListWidget.itemDoubleClicked.connect(self.play_video)
+        self.searchVideoLineEdit.returnPressed.connect(self.play_first_video_in_list)
+        self.videoListWidget.itemDoubleClicked.connect(self.play_clicked_video)
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
         application = QCoreApplication.instance()
@@ -37,10 +38,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for video in videos:
             self.videoListWidget.addItem(video)
 
-    def play_video(self):
-        video = self.videoListWidget.currentItem().text()
+    def play_video(self, video: str):
+        screen = QApplication.screens()[-1]
         screen = QApplication.screens()[-1]
         self.projector_window.show()
         self.projector_window.windowHandle().setScreen(screen)
         self.projector_window.showFullScreen()
         self.projector_window.play_video(self.video_service.get_video_path_from_video(video))
+
+    def play_first_video_in_list(self):
+        first_item = self.videoListWidget.item(0)
+        if first_item:
+            video = first_item.text()
+            self.play_video(video)
+
+    def play_clicked_video(self):
+        video = self.videoListWidget.currentItem().text()
+        self.play_video(video)
