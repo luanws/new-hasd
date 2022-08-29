@@ -7,22 +7,23 @@ from src.utils.string import normalize
 class VideoService:
     directory: str
     video_extension: str = 'mp4'
+    videos: List[str] = []
 
     def __init__(self, directory: str) -> None:
         self.directory = os.path.join(os.getcwd(), directory)
+        self.videos = self.get_videos()
 
     def remove_file_extension(self, file_name: str) -> str:
         return ''.join(file_name.split('.')[:-1])
 
     def get_videos(self) -> List[str]:
-        videos = os.listdir(self.directory)
-        videos = [self.remove_file_extension(v) for v in videos]
-        videos.sort()
-        return videos
+        self.videos = os.listdir(self.directory)
+        self.videos = [self.remove_file_extension(v) for v in self.videos]
+        self.videos.sort()
+        return self.videos
 
     def search_videos(self, search_text: str) -> List[str]:
-        videos = self.get_videos()
-        filtered_videos = [video for video in videos if normalize(search_text.lower()) in normalize(video.lower())]
+        filtered_videos = [video for video in self.videos if normalize(search_text.lower()) in normalize(video.lower())]
         return filtered_videos
 
     def get_video_path_from_video(self, video: str) -> str:
