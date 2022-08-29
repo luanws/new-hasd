@@ -1,8 +1,9 @@
 from PyQt5 import QtGui
+from PyQt5.QtCore import QUrl
+from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
+from PyQt5.QtMultimediaWidgets import QVideoWidget
 from PyQt5.QtWidgets import QMainWindow
 from src.ui.projector.window import Ui_MainWindow
-
-from .video_player_widget import VideoPlayerWidget
 
 
 class ProjectorWindow(QMainWindow, Ui_MainWindow):
@@ -12,9 +13,11 @@ class ProjectorWindow(QMainWindow, Ui_MainWindow):
 
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
 
-        self.video_player_widget = VideoPlayerWidget()
-        self.centralWidget().layout().addWidget(self.video_player_widget)
+        self.video_widget = QVideoWidget()
+        self.media_player = QMediaPlayer(None, QMediaPlayer.VideoSurface)
+        self.media_player.setVideoOutput(self.video_widget)
+        self.centralWidget().layout().addWidget(self.video_widget)
 
     def play_video(self, video_path: str):
-        print(video_path)
-        self.video_player_widget.play_video(video_path)
+        self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(video_path)))
+        self.media_player.play()
