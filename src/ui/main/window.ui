@@ -18,11 +18,73 @@
 	padding: 4px;
 	background-color: transparent;
 	border-radius: 16px;
+    background-color: #1E1E1E;
 }
 
 QPushButton:hover {
 	background-color: #ccc;
 	color: white;
+}
+
+QScrollBar {
+    background: #1E1E1E;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+QScrollBar::handle {     
+    border: 0px solid red;
+    border-radius: 4px;
+    background-color: #4F4F4F;
+}
+
+QScrollBar::add-line {
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line {
+    subcontrol-origin: margin;
+}
+
+QScrollBar:vertical {
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {    
+    min-height: 32px;
+}
+
+QScrollBar::add-line:vertical {
+    height: 0px;
+    subcontrol-position: bottom;
+}
+
+QScrollBar::sub-line:vertical {
+    height: 0px;
+    subcontrol-position: top;
+}
+
+QScrollBar:horizontal {
+    height: 10px;
+}
+
+QScrollBar::handle:horizontal {  
+    min-width: 32px;
+}
+
+QScrollBar::add-line:horizontal {
+    width: 0px;
+    subcontrol-position: left;
+}
+
+QScrollBar::sub-line:horizontal {
+    width: 0px;
+    subcontrol-position: right;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical,
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -97,6 +159,21 @@ font-size: 20px;</string>
           <width>1024</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget {
+	border-radius: 8px;
+}
+
+QListWidget::item {
+	color: white;
+	padding: 8px;
+}</string>
         </property>
        </widget>
       </item>
