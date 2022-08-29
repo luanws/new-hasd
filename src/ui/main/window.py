@@ -145,7 +145,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Projetor bíblico"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "HASD"))
         self.label.setText(_translate("MainWindow", "Hinário adventista do sétimo dia"))
         self.searchVideoLineEdit.setPlaceholderText(_translate("MainWindow", "Pesquise aqui..."))
         self.actionSair.setText(_translate("MainWindow", "Sair"))
