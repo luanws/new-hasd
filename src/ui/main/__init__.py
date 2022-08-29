@@ -37,8 +37,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for video in videos:
             self.videoListWidget.addItem(video)
 
-    def play_video(self, video: str):
+    def play_video(self):
+        video = self.videoListWidget.currentItem().text()
         screen = QApplication.screens()[-1]
         self.projector_window.show()
         self.projector_window.windowHandle().setScreen(screen)
         self.projector_window.showFullScreen()
+        self.projector_window.play_video(self.video_service.get_video_path_from_video(video))

@@ -6,6 +6,7 @@ from src.utils.string import normalize
 
 class VideoService:
     directory: str
+    video_extension: str = 'mp4'
 
     def __init__(self, directory: str) -> None:
         self.directory = os.path.join(os.getcwd(), directory)
@@ -23,3 +24,6 @@ class VideoService:
         videos = self.get_videos()
         filtered_videos = [video for video in videos if normalize(search_text.lower()) in normalize(video.lower())]
         return filtered_videos
+
+    def get_video_path_from_video(self, video: str) -> str:
+        return os.path.join(self.directory, f'{video}.{self.video_extension}')
