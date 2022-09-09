@@ -14,7 +14,7 @@ Pra instalar o New HASD no Windows, siga as etapas:
 4. Baixe os novos [hinos](https://drive.google.com/drive/folders/1XVaDUblS-r2XMgi-eb-MCYhw2xhq-tiV?usp=sharing);
 5. Copie ou recorte os hinos baixados e cole dentro na pasta “data” do New HASD;
 6. Execute o programa abrindo o arquivo HASD.exe;
-7. Se houver imagem ao tentar reproduzir um hino, instale o [k-lite codec pack](https://drive.google.com/file/d/1b4MPId_NZPkwFL5Qnt5PyDy9iXKoQ9qs/view?usp=sharing) e tente novamente.
+7. Se não houver imagem ao tentar reproduzir um hino, instale o [k-lite codec pack](https://drive.google.com/file/d/1b4MPId_NZPkwFL5Qnt5PyDy9iXKoQ9qs/view?usp=sharing) e tente novamente.
 
 ## 💻 Pré-requisitos para desenvolvimento
 
