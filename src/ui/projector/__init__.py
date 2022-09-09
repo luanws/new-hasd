@@ -1,5 +1,5 @@
 from PyQt5 import QtGui
-from PyQt5.QtCore import QUrl
+from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 from PyQt5.QtWidgets import QMainWindow
@@ -18,6 +18,8 @@ class ProjectorWindow(QMainWindow, Ui_MainWindow):
         self.media_player.setVideoOutput(self.video_widget)
         self.media_player.mediaStatusChanged.connect(self.status_changed)
         self.centralWidget().layout().addWidget(self.video_widget)
+
+        self.setCursor(Qt.BlankCursor)
 
     def closeEvent(self, event: QtGui.QCloseEvent) -> None:
         self.stop_video()
