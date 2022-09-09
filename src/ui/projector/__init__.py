@@ -19,10 +19,17 @@ class ProjectorWindow(QMainWindow, Ui_MainWindow):
         self.media_player.mediaStatusChanged.connect(self.status_changed)
         self.centralWidget().layout().addWidget(self.video_widget)
 
-    def play_video(self, video_path: str):
+    def closeEvent(self, event: QtGui.QCloseEvent) -> None:
+        self.stop_video()
+        event.accept()
+
+    def play_video(self, video_path: str) -> None:
         self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(video_path)))
         self.media_player.play()
 
-    def status_changed(self, status):
+    def stop_video(self) -> None:
+        self.media_player.stop()
+
+    def status_changed(self, status) -> None:
         if status == QMediaPlayer.EndOfMedia:
             self.hide()
