@@ -8,7 +8,7 @@
 
 Pra instalar o New HASD no Windows, siga as etapas:
 
-1. Acesse o repositório do projeto no [GitHub](https://github.com/luanws/new-hasd/releases/latest);
+1. Acesse o último [lançamento](https://github.com/luanws/new-hasd/releases/latest) do projeto;
 2. Baixe o arquivo HASD.zip;
 3. Extraia a pasta;
 4. Baixe os novos [hinos](https://drive.google.com/drive/folders/1XVaDUblS-r2XMgi-eb-MCYhw2xhq-tiV?usp=sharing);
