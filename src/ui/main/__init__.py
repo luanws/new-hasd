@@ -1,8 +1,8 @@
 from typing import List
 
 from PyQt5 import QtGui
-from PyQt5.QtCore import QCoreApplication
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtCore import QCoreApplication, Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QShortcut
 from src.services import VideoService
 from src.ui.main.window import Ui_MainWindow
 from src.ui.projector import ProjectorWindow
@@ -22,6 +22,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.searchVideoLineEdit.textChanged.connect(self.search_video)
         self.searchVideoLineEdit.returnPressed.connect(self.play_first_video_in_list)
         self.videoListWidget.itemDoubleClicked.connect(self.play_clicked_video)
+
+        self.configure_hot_keys()
+
+    def configure_hot_keys(self) -> None:
+        QShortcut(Qt.Key_Escape, self, self.projector_window.close)
+        QShortcut(Qt.Key_Escape, self.projector_window, self.projector_window.close)
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
         application = QCoreApplication.instance()
