@@ -12,12 +12,12 @@ class VideoService:
 
     def __init__(self, directory: str) -> None:
         self.directory = os.path.join(os.getcwd(), directory)
-        self.__update_videos()
+        self.update_videos()
 
     def remove_file_extension(self, file_name: str) -> str:
         return ''.join(file_name.split('.')[:-1])
 
-    def __update_videos(self) -> List[str]:
+    def update_videos(self) -> List[str]:
         self.videos = os.listdir(self.directory)
         self.videos = [self.remove_file_extension(v) for v in self.videos]
         self.videos.sort(key=self.__get_sort_videos_key())

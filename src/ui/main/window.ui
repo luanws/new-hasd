@@ -153,7 +153,7 @@ font-size: 20px;</string>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QListWidget" name="videoListWidget">
+       <widget class="QListWidget" name="hymnListWidget">
         <property name="maximumSize">
          <size>
           <width>1024</width>
